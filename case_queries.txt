@@ -1,0 +1,28 @@
+/*select e.Name_Surname, jt.Title, d.Name as department_name
+from Employee e 
+JOIN Job_Title jt ON e.Job_Title_Id = jt.Id
+JOIN Department d ON e.Department_Id = d.Id*/
+
+/*INSERT INTO Job_Title(Id,Title) VALUES(16,'Web Programmer')*/
+
+/*UPDATE Job_Title SET Title = 'Web Developer' WHERE Title = 'Web Programmer';
+select * from Job_Title;*/
+
+/*DELETE FROM Job_Title WHERE Title = 'Web Developer';
+select * from Job_Title;*/
+
+/*select d.Name as department, count(e.Id) as employee_number
+from Employee e
+JOIN Department d ON e.Department_Id = d.Id
+WHERE e.End_Date IS NULL
+GROUP BY d.Name*/
+
+
+
+select e.Name_Surname, jt.Title, d.Name as department_name, em.Name_Surname as manager, e.Start_Date, e.End_date
+from Employee e
+JOIN Job_Title jt ON e.Job_Title_Id = jt.Id
+JOIN Department d ON e.Department_Id = d.Id
+JOIN Employee em ON e.Manager_Id = em.Id
+WHERE e.Name_Surname = 'Toni Lembeck'
+
